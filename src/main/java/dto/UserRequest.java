@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonSerialize
 public class UserRequest {
-    private String userName;
+    private String username;
     private String firstName;
     private String lastName;
     private String email;
     private Long id;
     private String password;
-    private String phoneNumber;
+    private String phone;
     private Long status;
 }

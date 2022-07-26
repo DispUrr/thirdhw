@@ -8,11 +8,10 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class UserApi extends PetStoreApi{
+
     private static final String USER_LIST_RESOURCE = "/user/createWithList";
     private static final String USER_RESOURCE = "/user";
-    private static final String GET_USER_BY_NAME_RESOURCE = "/user/{userName}";
-    private static final String GET_USER_LOGIN = "/user/login";
-
+    private static final String GET_USER_BY_NAME_RESOURCE = "/user/{username}";
 
     public Response createUsersWithList(List<UserRequest> users) {
         return given(requestSpecification)
@@ -32,10 +31,10 @@ public class UserApi extends PetStoreApi{
                 .post(USER_RESOURCE);
     }
 
-    public Response getUserByName(String userName) {
+    public Response getUserByName(String username) {
         return given(requestSpecification)
                 .with()
-                .pathParam("userName", userName)
+                .pathParam("username", username)
                 .log().all()
                 .when()
                 .get(GET_USER_BY_NAME_RESOURCE);
